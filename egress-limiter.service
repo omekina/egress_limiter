@@ -1,0 +1,11 @@
+[Unit]
+Description=Egress network traffic throttling
+After=network-online.target
+
+[Service]
+ExecStart=/root/egress_limiter.sh
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
